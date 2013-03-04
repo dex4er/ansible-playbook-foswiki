@@ -1,8 +1,0 @@
----
-
-- hosts: all
-
-  tasks:
-  - name: apt-cache update
-    apt: update_cache=yes
-
