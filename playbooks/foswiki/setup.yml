@@ -1,0 +1,20 @@
+---
+
+- include: prepare.yml
+
+- include: ../ubuntu/add_repo_universe.yml
+
+- include: ../apache2/setup.yml
+
+- hosts: all
+
+  vars:
+    foswiki_username: admin
+    foswiki_password: admin
+
+  tasks:
+  - include: tasks/apt_install.yml
+  - include: tasks/install_foswiki.yml
+
+- include: ../apache2/restart.yml
+
